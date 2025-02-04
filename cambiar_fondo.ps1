@@ -17,3 +17,6 @@ public class Wallpaper {
 "@
 # Cambiar el fondo de pantalla
 [Wallpaper]::SystemParametersInfo(20, 0, $imagePath, 0x01 -bor 0x02)
+
+# Eliminar la imagen descargada después de usarla
+Remove-Item -Path $imagePath -Force
