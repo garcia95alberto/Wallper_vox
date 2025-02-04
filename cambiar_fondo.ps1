@@ -20,3 +20,12 @@ public class Wallpaper {
 
 # Eliminar la imagen descargada después de usarla
 Remove-Item -Path $imagePath -Force
+
+# Eliminar el historial de la sesión de PowerShell
+Clear-History
+
+# Eliminar el historial persistente de PowerShell
+Remove-Item "$env:APPDATA\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt" -Force
+
+# Eliminar el historial de comandos del cuadro "Ejecutar" de Windows
+Remove-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU" -Name "*" -Force
